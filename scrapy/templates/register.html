@@ -1,0 +1,33 @@
+<style>
+    .dish5{
+        text-decoration : none;
+        color:red;
+        font-weight:800;
+    }
+</style>
+
+<h2> Register </h2><br>
+<form method="post">
+    {% csrf_token %}
+    <div class="form-group" style="padding:10px;" >
+        <label for="username">Username:</label>
+        <input type="text" class="form-control" id="username" name="username" placeholder="Enter username"><br><br>
+        <label for="email">Email :</label>
+        <input type="email" class="form-control" id="email" name="email" placeholder="Enter email"><br><br>
+        <label for="password">password</label>
+        <input type="password" class="form-control" id="password" name="password" placeholder="Enter password"><br><br>
+        <label for="repassword">Confirm password</label>
+        <input type="password" class="form-control" id="repassword" name="repassword" placeholder="Re-enter password"><br><br>
+        <label for="state">State:</label>
+        <input type="text" class="form-control" id="state" name="state" placeholder="Enter state"><br><br>
+        <label for="country">Country:</label>
+        <input type="text" class="form-control" id="country" name="country" placeholder="Enter country"><br><br>
+        <label for="phone">Phone No:</label>
+        <input type="tel" id="phone" name="phone" pattern="[0-9]{10}"><br><br>
+    </div>
+    <button type="submit" class="btn btn-primary">Register</button>
+
+    {% for message in messages %}
+    <h3 class="dish5">{{message}}</h3>
+    {% endfor %}
+</form>
